@@ -21,7 +21,8 @@ function Content() {
       })
       .catch(error => console.error(error));
   }, []);
-  const { date, explanation, title, url } = data;
+  const { date, explanation, title,  url } = data;
+  
 
   
   return !url ? (
@@ -29,7 +30,7 @@ function Content() {
   ) : (
 
     <div>
-      <Header />
+      <Header url={url}/>
 
       <h2>{title}</h2>
       <h3>{date}</h3>

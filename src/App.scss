@@ -31,3 +31,14 @@
     transform: rotate(360deg);
   }
 }
+header {
+  height: 100vh;
+  background:  url("https://source.unsplash.com/random");
+  display: flex;
+  align-items: flex-end;
+  h1{
+    color: white;
+    background-color: #282c349f;
+    padding: 5px 25px 5px 5px;
+  }
+}
