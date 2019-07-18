@@ -1,13 +1,11 @@
-import React from 'react'
+import React from "react";
 
 function PhotoCard(props) {
-  
-  console.log(props)
   return (
     <div>
-      <img src={props.url} alt="Space"/>
+      <img src={props.url} alt="Space" />
     </div>
-  )
+  );
 }
 
-export default PhotoCard 
+export default PhotoCard;
