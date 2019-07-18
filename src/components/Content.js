@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
 import PhotoCard from "./PhotoCard";
+import Footer from "./Footer";
+import Header from "./Header";
+import {UIButton} from './Semantic'
 
 import axios from "axios";
 
-function Main() {
+
+
+function Content() {
   const [data, setData] = useState({});
 
   useEffect(() => {
@@ -18,16 +23,22 @@ function Main() {
   }, []);
   const { date, explanation, title, url } = data;
 
+  
   return !url ? (
     <p>Fetching the photo of the day</p>
   ) : (
-    <div className="photo-card">
+
+    <div>
+      <Header />
+
       <h2>{title}</h2>
       <h3>{date}</h3>
+      <UIButton />
       <PhotoCard url={url} />
       <p>{explanation}</p>
+      <Footer />
     </div>
   );
 }
 
-export default Main;
+export default Content;
