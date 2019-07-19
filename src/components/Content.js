@@ -21,7 +21,7 @@ function Content() {
 
   return !url ? (
     <Dimmer active>
-      <Loader indeterminate>Fetching the photo of the day</Loader>/>
+      <Loader indeterminate>Fetching the photo of the day</Loader>
     </Dimmer>
   ) : (
     <div>
