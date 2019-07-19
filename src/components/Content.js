@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import PhotoCard from "./PhotoCard";
 import Footer from "./Footer";
 import Header from "./Header";
 import {UIButton} from './Semantic'
@@ -21,21 +20,19 @@ function Content() {
       })
       .catch(error => console.error(error));
   }, []);
-  const { date, explanation, title,  url } = data;
+  const { date, explanation, title, url } = data;
   
 
   
   return !url ? (
     <p>Fetching the photo of the day</p>
   ) : (
-
     <div>
       <Header url={url}/>
 
       <h2>{title}</h2>
       <h3>{date}</h3>
       <UIButton />
-      <PhotoCard url={url} />
       <p>{explanation}</p>
       <Footer />
     </div>
