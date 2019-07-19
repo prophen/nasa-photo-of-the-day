@@ -10,7 +10,6 @@ function Header(props) {
   return (
     <header style={divStyle}>
       <h1>NASA photo of the day</h1>
-      
       <div className={isHidden ? "hide" : ""}>
         <h2>{props.title}</h2>
         <p>Date: {props.date}</p>
