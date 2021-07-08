@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import PhotoCard from "./PhotoCard";
-
 import axios from "axios";
+import Header from "./Header";
+import Footer from "./Footer";
+import { Dimmer, Loader } from "semantic-ui-react";
 
-function Main() {
+function Content() {
   const [data, setData] = useState({});
 
   useEffect(() => {
@@ -19,15 +20,15 @@ function Main() {
   const { date, explanation, title, url } = data;
 
   return !url ? (
-    <p>Fetching the photo of the day</p>
+    <Dimmer active>
+      <Loader indeterminate>Fetching the photo of the day</Loader>
+    </Dimmer>
   ) : (
-    <div className="photo-card">
-      <h2>{title}</h2>
-      <h3>{date}</h3>
-      <PhotoCard url={url} />
-      <p>{explanation}</p>
+    <div>
+      <Header url={url} date={date} title={title} explanation={explanation} />
+      <Footer />
     </div>
   );
 }
 
-export default Main;
+export default Content;
